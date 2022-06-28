@@ -10,7 +10,7 @@ class MerchantAdmin(admin.ModelAdmin):
     list_display = ('country_code', 'merchant_name')
 
 class CoffeeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'seller', 'producer', 'varieties', 'origin_country', 'process', 'toast_level', 
+    list_display = ('name', 'seller', 'producer', 'varieties', 'origin_country', 'toast_level', 
                         'tasting_notes', 'is_it_speciality')
     fieldsets = (
         (None, {
@@ -19,7 +19,7 @@ class CoffeeAdmin(admin.ModelAdmin):
         }),
         ('More informations', {
             'classes': ('collapse',),
-            'fields' : ('producer', 'tasting_notes', 'varieties', 'toast_level', 'how_many_are_available', 'origin_country_2', 'process_2',
+            'fields' : ('producer', 'tasting_notes', 'varieties', 'toast_level', 'how_many_are_available', 'origin_country_2',
                         'origin_area', 'origin_area_2', 'price', 'producer_2')
         }),
     )
