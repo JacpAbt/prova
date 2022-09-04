@@ -3,14 +3,17 @@ from .models import  Coffee, Merchant, User, CoffeePlantType, Process
 
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'mail',)
- 
+    list_display = ('full_name', 'mail', 'country_code',)
+
+    list_filter = ('country_code',)
+
+
 class MerchantAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at')
     list_display = ('country_code', 'merchant_name')
 
 class CoffeeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'seller', 'producer', 'varieties', 'origin_country', 'toast_level', 
+    list_display = ('name', 'seller', 'producer', 'origin_country', 'toast_level', 'processes', 'plant_varieties',
                         'tasting_notes', 'is_it_speciality')
     fieldsets = (
         (None, {
@@ -24,6 +27,8 @@ class CoffeeAdmin(admin.ModelAdmin):
         }),
     )
     list_filter = ('seller', 'origin_country', 'process')
+
+
     
                 
 admin.site.register(User, UserAdmin)
