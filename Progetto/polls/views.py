@@ -1,14 +1,27 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-import datetime
+import random
+from .models import Coffee
+from django.template import loader
 
 # Create your views here.
 
-def current_datetime(request):
-    now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
-    return HttpResponse(html)
+def coffees(request):
+    all_coffees = []
+    for coffee in Coffee.objects.all():
+        all_coffees.append(coffee)
+    output = ', '.join([str(p) for p in Coffee.objects.all()])
+    template = loader.get_template('polls/index.html')
+    html = "<html><body>%s</body></html>" % output
+    context = {
+        'all_coffees': all_coffees,
+    }
+    return render(request, 'polls/index.html', context)
 
 def index(request):
-    html = 'hello world'
-    return HttpResponse(html)
+    return render(request, 'index.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')

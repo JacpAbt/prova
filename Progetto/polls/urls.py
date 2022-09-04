@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('datetime', views.current_datetime, name='current_datetime'),
-    path('', views.index, name='index'),
+    path('coffees', views.coffees, name='coffees'),
+    path('', TemplateView.as_view(template_name='index.html'), name='polls_index'),
 ]
