@@ -1,2 +1,4 @@
 Django
 Django-countries[pyuca]
+black==19.10b0
+mypy==0.782
