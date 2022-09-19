@@ -1,6 +1,7 @@
 {% url 'public:contact' as contact_url %}
 {% url 'public:about' as about_url %}
 {% url 'public:index' as index_url %}
+{% url 'public:coffees' as coffees_url %}
 {% url 'accounts:profile' as profile_url %}
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -15,6 +16,7 @@
                 <li class="nav-item"><a class="nav-link {% if request.path == index_url %}active{% endif %}" href='{{ index_url }}'>Index</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == about_url %}active{% endif %}" href='{{ about_url }}'>About</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == contact_url %}active{% endif %}" href='{{ contact_url }}'>Contact</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == coffees_url %}active{% endif %}" href='{{ coffees_url }}'>Coffees</a></li>
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link {% if request.path == profile_url %}active{% endif %}" href='{{ profile_url}}'>Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href='{% url "accounts:logout" %}'>Logout</a></li>
