@@ -19,7 +19,6 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('', include('Progetto.apps.public.urls'), name='index'),
     path('accounts/', include('Progetto.apps.accounts.urls')),
