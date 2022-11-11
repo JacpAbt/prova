@@ -13,15 +13,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link {% if request.path == index_url %}active{% endif %}" href='{{ index_url }}'>Index</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == index_url %}active{% endif %}" href='{{ index_url }}'>Home</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == coffees_url %}active{% endif %}" href='{{ coffees_url }}'>Coffees</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == about_url %}active{% endif %}" href='{{ about_url }}'>About</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == contact_url %}active{% endif %}" href='{{ contact_url }}'>Contact</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.path == coffees_url %}active{% endif %}" href='{{ coffees_url }}'>Coffees</a></li>
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link {% if request.path == profile_url %}active{% endif %}" href='{{ profile_url}}'>Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href='{% url "accounts:logout" %}'>Logout</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href='{% url "accounts:login" %}'>Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href='{% url "accounts:signup" %}'>Signup</a></li>
                 {% endif%}
             </ul>
         </div>
