@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Progetto.apps.accounts',
+    'Progetto.apps.public',
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -47,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -132,3 +135,6 @@ LOGIN_URL= 'accounts:login'
 LOGIN_REDIRECT_URL= 'public:index'
 LOGOUT_REDIRECT_URL= 'public:index'
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

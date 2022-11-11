@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Progetto.apps.public.urls'), name='index'),
     path('accounts/', include('Progetto.apps.accounts.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
 ]
