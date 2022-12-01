@@ -18,10 +18,8 @@ def coffees(request: HttpRequest) -> HttpResponse:
     return render(request, 'Coffees.html',
     {'coffee_list': coffee_list},)
 
-def standard_coffee(request: HttpRequest) -> HttpResponse:
-    coffee_list = Coffee.objects.all()
-    for coffee in coffee_list:
-        if coffee.name == coffee_name:
-            return render(request, 'standard_coffee.html',
+def standard_coffee(request: HttpRequest, coffee_id) -> HttpResponse:
+    coffee = Coffee.objects.get(pk=coffee_id)
+    return render(request, 'standard_coffee.html',
             {'coffee': coffee},)
 

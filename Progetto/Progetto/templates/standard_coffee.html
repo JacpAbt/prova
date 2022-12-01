@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Coffees{% endblock %}
 <body>
-    <main id="standard_coffee">        
-        <div class="container px-2 px-lg-0">
-            <!-- Featured Project Row-->
-            <h2>
-            <p class="text-black-50 mb-0 text-center">{coffee.name}</p>
-            </h2>
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{coffee.coffee_image}}" alt="..." /></div>
+    <main id="coffees">
+        {% block content %}
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-2 px-lg-0">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src={{coffee.coffee_image}} alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>
+                            </h4>
+                            <p class="text-black-50 mb-0">{{coffee.description}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+        {% endblock %}
     </main>
 </body>

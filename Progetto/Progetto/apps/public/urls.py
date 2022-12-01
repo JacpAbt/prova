@@ -1,6 +1,5 @@
 from . import views
 from django.urls import include, path
-from .models import Coffee
 
 app_name='public'
 urlpatterns = [
@@ -8,12 +7,9 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('contact', views.contact, name='contact'),
     path('coffees', views.coffees, name='coffees'),
+    path('coffees/<int:coffee_id>/', views.standard_coffee, name='coffee')
 ]
 
 
-coffee_list = Coffee.objects.all()
-for coffee in coffee_list:
-    coffee_name = coffee.name
-    coffee_url_name = coffee.name.replace(' ', '_')
-    urlpatterns.append(path('coffees/'+str(coffee_url_name), views.standard_coffee, name=coffee_name))
+
 

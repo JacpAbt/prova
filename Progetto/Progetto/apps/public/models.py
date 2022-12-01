@@ -47,7 +47,7 @@ class Coffee(models.Model):
     how_many_are_available = models.IntegerField(null=True, blank = True)
     price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank = True)
     url_to_product = models.CharField(max_length=100, null=True)
-    coffee_image=models.ImageField(upload_to='static/theme/assets/img/Coffee/' , null=True, blank = True)
+    coffee_image=models.ImageField(upload_to='Progetto/static/theme/assets/img/Coffee/' , null=True, blank = True)
     description = models.CharField(max_length=500, null=True, blank=True)
 
     def processes(self):
