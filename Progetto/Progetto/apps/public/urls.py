@@ -1,5 +1,5 @@
 from . import views
-from django.urls import include, path
+from django.urls import path
 
 app_name='public'
 urlpatterns = [
@@ -7,7 +7,7 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('contact', views.contact, name='contact'),
     path('coffees', views.coffees, name='coffees'),
-    path('coffees/<int:coffee_id>/', views.standard_coffee, name='coffee')
+    path('coffees/<int:coffee_id>/', views.standard_coffee, name='coffee'),
 ]
 
 

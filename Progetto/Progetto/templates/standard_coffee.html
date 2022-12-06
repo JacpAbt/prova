@@ -9,12 +9,27 @@
             <div class="container px-2 px-lg-0">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src={{coffee.coffee_image}} alt="..." /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static '/theme/assets/img/Coffee/' %}{{ coffee.imagename }}" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>
-                            </h4>
                             <p class="text-black-50 mb-0">{{coffee.description}}</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <p class="text-black-50 mb-0">Producer: {{coffee.producer}}</p>
+                        </div>
+                        <div class="featured-text text-center text-lg-left">
+                            <p class="text-black-50 mb-0">Origin: {{coffee.origin_area}}</p>
+                        </div>
+                        <div class="featured-text text-center text-lg-left">
+                            <p class="text-black-50 mb-0">Tasting notes: {{coffee.tasting_notes}}</p>
+                        </div>
+                        <div class="featured-text text-center text-lg-left">
+                            <p class="text-black-50 mb-0">Processes: {{coffee.processes}}</p>
+                        </div>
+                        <div class="featured-text text-center text-lg-left">
+                            <p class="text-black-50 mb-0">Plant: {{coffee.plant_varieties}}</p>
                         </div>
                     </div>
                 </div>
